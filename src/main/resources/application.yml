@@ -1,0 +1,35 @@
+# default profile
+logging:
+  level:
+    '[com.doding]': debug
+  pattern:
+    console: '%clr(%d{HH:mm:ss} [-5p] %c{30}.%M.%L : %m%n)'
+spring:
+  output:
+    ansi:
+      enabled: always
+---
+# dev profile
+spring:
+  config:
+    activate:
+      on-profile:
+        - dev
+server:
+  db:
+    ip: 192.168.0.9
+    user: test
+logging:
+  level:
+    '[com.doding]': trace
+---
+# oper profile
+spring:
+  config:
+    activate:
+      on-profile:
+        - oper
+server:
+  db:
+    ip: 192.168.0.1
+    user: admin

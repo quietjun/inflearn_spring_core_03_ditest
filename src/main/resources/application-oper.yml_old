@@ -1,0 +1,4 @@
+server:
+  db:
+    ip: 192.168.0.1
+    user: admin
